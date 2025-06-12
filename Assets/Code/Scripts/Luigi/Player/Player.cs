@@ -106,7 +106,7 @@ public class Player : Character
 
         OrizontalRotation += mouseX;
         VerticallRotation += mouseY;
-        VerticallRotation = Mathf.Clamp(VerticallRotation, -90f, 85f); // Limita la rotazione
+        VerticallRotation = Mathf.Clamp(VerticallRotation, -30f, 0f); // Limita la rotazione
 
         // Applicare la rotazione alla fotocamera e al giocatore
         transform.rotation = Quaternion.Euler(0, OrizontalRotation, 0);
