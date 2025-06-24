@@ -5,7 +5,7 @@ public class Cavallini : MonoBehaviour
 {
     public Transform targetPoint;
     public KeyCode activationKey = KeyCode.E;
-    public Interactable interactableToRemove; // Assegna da Inspector
+    public Interactables interactableToRemove; // Assegna da Inspector
 
     private NavMeshAgent agent;
     private bool playerInTrigger = false;

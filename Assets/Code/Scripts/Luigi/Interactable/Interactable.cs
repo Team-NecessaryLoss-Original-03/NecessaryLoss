@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class Interactables : MonoBehaviour
 {
     public string interactionMessage = "Premi F per interagire";
     public KeyCode interactionKey = KeyCode.F;
