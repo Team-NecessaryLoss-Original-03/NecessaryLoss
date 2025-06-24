@@ -4,6 +4,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [Header("--- Interaction elements ---")]
+    [SerializeField] private string ID;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float interactionAngle = 20f;
     public static Action<string> OnActivation;
@@ -29,7 +30,7 @@ public class Interactable : MonoBehaviour
     void ActivateLeverOrButton()
     {
         Debug.Log("Actiion HERE");
-        OnActivation?.Invoke(name);
+        OnActivation?.Invoke(ID);
     }
 
     /*private void OnTriggerStay(Collider other)
