@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3647036190640031020}
   - component: {fileID: 6784932237821388157}
   - component: {fileID: 4699897348682932242}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cavallo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 0}
   activationKey: 101
+  interactableToRemove: {fileID: 6064400891503624852}
 --- !u!114 &6064400891503624852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0

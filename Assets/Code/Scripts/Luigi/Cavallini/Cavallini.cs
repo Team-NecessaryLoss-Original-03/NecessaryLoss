@@ -5,9 +5,12 @@ public class Cavallini : MonoBehaviour
 {
     public Transform targetPoint;
     public KeyCode activationKey = KeyCode.E;
+    public Interactable interactableToRemove; // Assegna da Inspector
+
     private NavMeshAgent agent;
     private bool playerInTrigger = false;
     private bool hasMoved = false;
+    private bool hasArrived = false;
 
     void Start()
     {
@@ -21,11 +24,21 @@ public class Cavallini : MonoBehaviour
         {
             agent.SetDestination(targetPoint.position);
             hasMoved = true;
+            if (interactableToRemove != null)
+            {
+                Destroy(interactableToRemove);
+                Debug.Log("Script Interactable rimosso.");
+            }
+            else
+            {
+                Debug.LogWarning("Nessun riferimento a Interactable da rimuovere.");
+            }
         }
 
-        // Ferma l’NPC quando ha raggiunto la destinazione
-        if (hasMoved && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        // Controlla se ha raggiunto la destinazione
+        if (hasMoved && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && !hasArrived)
         {
+            hasArrived = true;
             agent.isStopped = true;
         }
     }
@@ -34,7 +47,6 @@ public class Cavallini : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Entro");
             playerInTrigger = true;
         }
     }
@@ -43,7 +55,6 @@ public class Cavallini : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Esco");
             playerInTrigger = false;
         }
     }

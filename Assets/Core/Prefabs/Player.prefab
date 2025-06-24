@@ -277,7 +277,7 @@ MonoBehaviour:
   groundCheckDistance: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   isGrounded: 0
   move: {fileID: -2266381866556632248, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jump: {fileID: 1321244120299617227, guid: 052faaac586de48259a63d0c4782560b, type: 3}

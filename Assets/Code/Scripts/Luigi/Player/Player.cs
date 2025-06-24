@@ -80,12 +80,12 @@ public class Player : Character
 
     private void FixedUpdate()
     {
-        if (isGrounded)
-        {
+        //if (isGrounded)
+        //{
             Vector3 movementDirection = (transform.rotation * _moveDirection) * moveSpeed;
             Vector3 velocity = new Vector3(movementDirection.x, _rigidbody.linearVelocity.y, movementDirection.z);
             _rigidbody.linearVelocity = velocity;
-        }
+        //}
     }
 
 
