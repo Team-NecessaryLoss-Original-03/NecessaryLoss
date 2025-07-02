@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class EnviromentInteractable : MonoBehaviour
 {
     [Header("--- Interaction elements ---")]
-    [SerializeField] private string ID;
+    [SerializeField] private string objID;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float interactionAngle = 20f;
     public static Action<string> OnActivation;
@@ -15,11 +15,11 @@ public class Interactable : MonoBehaviour
         {
             if (IsLookingAt(this.transform))
             {
-                // TODO: insert UX "press E to use"
+                // TODO: insert UX "press F to use"
                 //OnLookingAtInteractable?.Invoke();
 
                 // TODO: change getkey to new InputSystem
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     ActivateLeverOrButton();
                 }
@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
     void ActivateLeverOrButton()
     {
         Debug.Log("Actiion HERE");
-        OnActivation?.Invoke(ID);
+        OnActivation?.Invoke(objID);
     }
 
     /*private void OnTriggerStay(Collider other)
@@ -54,7 +54,6 @@ public class Interactable : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(playerTransform.position, playerTransform.position + playerTransform.forward * 2);
-
     }
 }
 

@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class Listener : MonoBehaviour
 {
+    [SerializeField] private string myID;
+
     private void Awake()
     {
-        Interactable.OnActivation -= OpenSesamis;
-        Interactable.OnActivation += OpenSesamis;
+        EnviromentInteractable.OnActivation -= OpenSesamis;
+        EnviromentInteractable.OnActivation += OpenSesamis;
     }
 
     private void OpenSesamis(string objName)
     {
         Debug.Log($"OpenSesamis from {objName}");
+        if (objName.Equals(myID))
+        {
+            this.transform.position += Vector3.up * 12;
+        }
     }
 }
