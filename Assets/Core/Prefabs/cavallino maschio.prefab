@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27
+      value: -11.611461
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.114
+      value: -1.1888226
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.67
+      value: 17.781502
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -81,6 +81,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 8176376523574962823}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 7174820904712848840}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5458187348764445487}
   m_SourcePrefab: {fileID: 100100000, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
@@ -89,6 +95,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e6ff5518891bf842af90a7a8c76eafa, type: 3}
   m_PrefabInstance: {fileID: 1385980541825257166}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8176376523574962823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304317042785006495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49633c168896f97499e97af54018474a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPoint: {fileID: 0}
+  activationKey: 101
+  interactableToRemove: {fileID: 7174820904712848840}
+--- !u!114 &7174820904712848840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304317042785006495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0096c021d4949c34a885388124c53af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionMessage: Premi E per spostare
+  interactionKey: 101
 --- !u!65 &5458187348764445487
 BoxCollider:
   m_ObjectHideFlags: 0

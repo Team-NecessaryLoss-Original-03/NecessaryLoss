@@ -28184,6 +28184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7459649297384049105, guid: 6d5ed169a7abefc4a9386a906ec47081, type: 3}
+      propertyPath: groundCheckDistance
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7901243130839924871, guid: 6d5ed169a7abefc4a9386a906ec47081, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -28248,10 +28252,6 @@ PrefabInstance:
     - target: {fileID: 2304317042785006495, guid: 20c329da5f37c974aa64a0fc99a86720, type: 3}
       propertyPath: m_Name
       value: cavallino maschio
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304317042785006495, guid: 20c329da5f37c974aa64a0fc99a86720, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
