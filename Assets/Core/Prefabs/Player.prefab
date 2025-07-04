@@ -273,6 +273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cavallino player
       objectReference: {fileID: 0}
+    - target: {fileID: 7564023062771111527, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4613925733640090284, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
