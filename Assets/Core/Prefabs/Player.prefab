@@ -289,7 +289,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7498737615337907180, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
+    - {fileID: 3130095605120958729, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
+    - {fileID: 1864797731584132606, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
+    - {fileID: 3625336850816091973, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4613925733640090284, guid: 141e4f51a176954429b5ce4bec0c8b9f, type: 3}
     m_AddedGameObjects:
