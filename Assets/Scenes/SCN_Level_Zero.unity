@@ -9549,7 +9549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &653462641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24763,6 +24763,14 @@ PrefabInstance:
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 809775078}
+    - target: {fileID: 7161981978282912262, guid: c8fea45f079bcbd4f86e90825b19c6cb, type: 3}
+      propertyPath: countdownTime
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161981978282912262, guid: c8fea45f079bcbd4f86e90825b19c6cb, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 798968117}
     - target: {fileID: 7517977943304086762, guid: c8fea45f079bcbd4f86e90825b19c6cb, type: 3}
       propertyPath: pauseMenu
       value: 
