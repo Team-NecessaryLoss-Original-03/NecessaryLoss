@@ -17,7 +17,7 @@ public class TagCounter : MonoBehaviour
         
         if (counterText != null)
         {
-            counterText.text = "Oggetti con tag '" + tagToCount + "': " + currentCount.ToString();
+            counterText.text = "x" + " " + currentCount.ToString();
         }
     }
 
