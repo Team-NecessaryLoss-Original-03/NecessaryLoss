@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Map
   - Cavallo
+  - winCondition
   layers:
   - Default
   - TransparentFX
