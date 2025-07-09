@@ -3,59 +3,89 @@ using UnityEngine.AI;
 
 public class Cavallini : MonoBehaviour
 {
-    public Transform targetPoint;
+    public Transform targetPoint; // Lasciato per compatibilità
     public KeyCode activationKey = KeyCode.E;
-    public Interactables interactableToRemove; // Assegna da Inspector
+    public Interactables interactableToRemove; // Assegnabile da Inspector
 
     private NavMeshAgent agent;
-    private bool playerInTrigger = false;
     private bool hasMoved = false;
     private bool hasArrived = false;
+
+    private static bool cavallinoInMovimento = false;
+    private static Transform playerTransform;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false; // Gestiamo rotazione manualmente
+
+        if (playerTransform == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogError("Player con tag 'Player' non trovato.");
+            }
+        }
     }
 
     void Update()
     {
-        // Se il player è nel trigger, preme E e l’NPC non si è ancora mosso
-        if (playerInTrigger && !hasMoved && Input.GetKeyDown(activationKey))
+        // Attiva movimento con E
+        if (!hasMoved && !cavallinoInMovimento && Input.GetKeyDown(activationKey))
         {
-            agent.SetDestination(targetPoint.position);
-            hasMoved = true;
-            if (interactableToRemove != null)
+            if (playerTransform != null)
             {
-                Destroy(interactableToRemove);
-                Debug.Log("Script Interactable rimosso.");
-            }
-            else
-            {
-                Debug.LogWarning("Nessun riferimento a Interactable da rimuovere.");
+                Vector3 targetPosition = playerTransform.position;
+
+                if (NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
+                {
+                    agent.SetDestination(hit.position);
+                    hasMoved = true;
+                    cavallinoInMovimento = true;
+
+                    if (interactableToRemove != null)
+                    {
+                        Destroy(interactableToRemove);
+                        Debug.Log("Script Interactable rimosso.");
+                    }
+                }
             }
         }
 
-        // Controlla se ha raggiunto la destinazione
+        // Rotazione verso direzione movimento con +180° su Y
+        if (hasMoved && !hasArrived && agent.velocity.sqrMagnitude > 0.01f)
+        {
+            Vector3 moveDirection = agent.velocity.normalized;
+            moveDirection.y = 0f; // Solo orizzontale
+
+            if (moveDirection != Vector3.zero)
+            {
+                // Rotazione base verso direzione movimento
+                Quaternion baseRotation = Quaternion.LookRotation(moveDirection);
+                // Aggiungo 180 gradi sull'asse Y
+                Quaternion targetRotation = baseRotation * Quaternion.Euler(0, 180f, 0);
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            }
+        }
+
+        // Quando arriva a destinazione
         if (hasMoved && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && !hasArrived)
         {
             hasArrived = true;
             agent.isStopped = true;
-        }
-    }
+            agent.enabled = false;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInTrigger = true;
-        }
-    }
+            // Cambia il layer in "Map"
+            gameObject.layer = LayerMask.NameToLayer("Map");
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInTrigger = false;
+            cavallinoInMovimento = false;
         }
     }
 }
+

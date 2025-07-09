@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2795204394795679191}
   - component: {fileID: 8436218043135809903}
   - component: {fileID: 1017056354620693964}
+  - component: {fileID: 2189170184087374066}
+  - component: {fileID: 4739192381930722485}
   m_Layer: 0
   m_Name: Cavallino prefab
   m_TagString: Untagged
@@ -114,6 +116,39 @@ NavMeshAgent:
   m_BaseOffset: 0.0066490634
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &2189170184087374066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157664209038711419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.014298739, y: 0.043213442, z: 0.03035796}
+  m_Center: {x: -0.00043310437, y: 0.0065536876, z: -0.00080492836}
+--- !u!114 &4739192381930722485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157664209038711419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8863136431abef7458f5126837dac3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7955262103270381197
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player_Data
   m_EditorClassIdentifier: 
   characterName: Player
-  moveSpeed: 5
+  moveSpeed: 4
   maxHealth: 100
   damage: 10
-  jumpForce: 8
+  jumpForce: 5.5
   sensibility: 1
